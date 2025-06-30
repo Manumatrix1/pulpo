@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distribuidora Mayorista Nahuelito</title> <!-- Título para la pestaña del navegador -->
+    <!-- Tailwind CSS CDN: Necesario para que las clases de Tailwind funcionen -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fuente Inter de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome para los iconos: Necesario para los iconos en los productos y contacto -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Estilos básicos para el cuerpo del documento */
+        body {
+            font-family: 'Inter', sans-serif; /* Aplica la fuente Inter a todo el texto */
+            background-color: #f8f8f8; /* Color de fondo general de la página */
+        }
+        /* Estilos específicos para la sección Hero (banner principal) */
+        .hero-section {
+            background-color: #B91C1C; /* Color de fondo rojo oscuro para la sección hero */
+            height: 600px; /* Altura fija para la sección hero */
+            display: flex; /* Utiliza flexbox para centrar contenido */
+            align-items: center; /* Centra el contenido verticalmente */
+            justify-content: center; /* Centra el contenido horizontalmente */
+            text-align: center; /* Alinea el texto al centro */
+            color: white; /* Color de texto blanco */
+            position: relative; /* Necesario para posicionar el overlay */
+        }
+        /* Estilos para la capa de superposición (overlay) en la sección hero */
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.2); /* Fondo semitransparente oscuro */
+            position: absolute; /* Posicionamiento absoluto para cubrir la sección */
+            top: 0;
+            left: 0;
+            width: 100%; /* Cubre todo el ancho */
+            height: 100%; /* Cubre toda la altura */
+        }
+        /* Estilos para las tarjetas de producto */
+        .product-card {
+            background-color: white; /* Fondo blanco para las tarjetas */
+            border-radius: 12px; /* Bordes redondeados */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            overflow: hidden; /* Oculta cualquier contenido que se desborde */
+            transition: transform 0.2s; /* Animación suave al hacer hover */
+        }
+        .product-card:hover {
+            transform: translateY(-5px); /* Efecto de "levantar" la tarjeta al hacer hover */
+        }
+        /* Estilos para las etiquetas de precio */
+        .price-tag {
+            background-color: #EF4444; /* Color de fondo rojo */
+            color: white; /* Texto blanco */
+            padding: 8px 16px; /* Relleno */
+            border-radius: 9999px; /* Bordes muy redondeados (píldora) */
+            font-weight: bold; /* Texto en negrita */
+            display: inline-block; /* Permite aplicar padding y margin como un bloque */
+            margin-top: 10px; /* Margen superior */
+        }
+        /* Estilos para el botón principal */
+        .btn-primary {
+            background-color: #B91C1C; /* Color de fondo rojo oscuro */
+            color: white; /* Texto blanco */
+            padding: 12px 24px; /* Relleno */
+            border-radius: 8px; /* Bordes redondeados */
+            font-weight: bold; /* Texto en negrita */
+            transition: background-color 0.2s; /* Animación suave al hacer hover */
+        }
+        .btn-primary:hover {
+            background-color: #991B1B; /* Color de fondo más oscuro al hacer hover */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header Section - Sección de cabecera con el logo, título y menú de navegación centrados -->
+    <header class="bg-white shadow-md py-6">
+        <div class="container mx-auto flex flex-col items-center justify-center">
+            <!-- Contenedor para el LOGO CENTRADO: Utiliza flexbox para centrar la imagen -->
+            <div class="w-full flex justify-center mb-4">
+                <img src="logo-nahuelito.png" alt="Logo Nahuelito" class="h-28 w-auto"> <!-- Imagen del logo -->
+            </div>
+
+            <!-- TÍTULO CENTRADO: Utiliza flexbox para centrar el título -->
+            <div class="w-full flex justify-center mb-4">
+                <h1 class="text-3xl font-bold text-red-700 text-center">
+                    DISTRIBUIDORA MAYORISTA<br>NAHUELITO
+                </h1> <!-- Título de la distribuidora -->
+            </div>
+
+            <!-- MENÚ DE NAVEGACIÓN: Utiliza flexbox para centrar el menú -->
+            <nav class="w-full flex justify-center">
+                <ul class="flex flex-wrap justify-center space-x-4 md:space-x-6">
+                    <li><a href="#productos" class="text-gray-700 hover:text-red-700 font-semibold">Productos</a></li> <!-- Enlace a la sección de productos -->
+                    <li><a href="#contacto" class="text-gray-700 hover:text-red-700 font-semibold">Contacto</a></li> <!-- Enlace a la sección de contacto -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section - Sección principal de bienvenida con un mensaje atractivo -->
+    <section class="hero-section">
+        <div class="overlay"></div> <!-- Capa de superposición para efecto visual -->
+        <div class="relative z-10 p-4">
+            <h2 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">La mejor calidad en productos cárnicos para tu negocio.</h2> <!-- Título principal de la sección -->
+            <p class="text-xl md:text-2xl mb-8">¡Somos tus aliados en la distribución de carne y pollo!</p> <!-- Subtítulo/descripción -->
+            <a href="#productos" class="btn-primary">Ver Productos</a> <!-- Botón para ir a la sección de productos -->
+        </div>
+    </section>
+
+    <!-- Products Section - Sección donde se muestran los productos disponibles -->
+    <section id="productos" class="container mx-auto px-4 py-12">
+        <h2 class="text-4xl font-bold text-center text-red-700 mb-10">Nuestros Productos Estrella</h2> <!-- Título de la sección de productos -->
+
+        <!-- Contenedor de las tarjetas de producto en un grid responsivo -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Product Card 1: Costilla Novillo -->
+            <div class="product-card p-6 flex flex-col items-center">
+                <i class="fas fa-bacon text-5xl text-gray-600 mb-4"></i> <!-- Icono de bacon -->
+                <h3 class="text-2xl font-semibold text-gray-900 mb-2">Costilla Novillo (Completo)</h3>
+                <p class="text-gray-600 text-center mb-4">Ideal para un asado inolvidable.</p>
+                <span class="price-tag">$9.300</span>
+            </div>
+
+            <!-- Product Card 2: Costilla Cortada -->
+            <div class="product-card p-6 flex flex-col items-center">
+                <i class="fas fa-drumstick-bite text-5xl text-gray-600 mb-4"></i> <!-- Icono de muslo de pollo -->
+                <h3 class="text-2xl font-semibold text-gray-900 mb-2">Costilla Cortada</h3>
+                <p class="text-gray-600 text-center mb-4">Fácil de preparar, deliciosa.</p>
+                <span class="price-tag">$9.800</span>
+            </div>
+
+            <!-- Product Card 3: Matambre -->
+            <div class="product-card p-6 flex flex-col items-center">
+                <i class="fas fa-cut text-5xl text-gray-600 mb-4"></i> <!-- Icono de corte/cuchillo -->
+                <h3 class="text-2xl font-semibold text-gray-900 mb-2">Matambre x unidad</h3>
+                <p class="text-gray-600 text-center mb-4">Versátil para rellenos o a la pizza.</p>
+                <span class="price-tag">$9.500</span>
+            </div>
+
+            <!-- Product Card 4: Asado Completo -->
+            <div class="product-card p-6 flex flex-col items-center">
+                <i class="fas fa-fire-alt text-5xl text-red-600 mb-4"></i> <!-- Icono de fuego -->
+                <h3 class="text-2xl font-semibold text-gray-900 mb-2">Asado completo (oferta)</h3>
+                <p class="text-gray-600 text-center mb-4">¡La mejor oferta para tu asado!</p>
+                <span class="price-tag">$7.500</span>
+            </div>
+
+            <!-- Product Card 5: Vacío Novillo-Novillito -->
+            <div class="product-card p-6 flex flex-col items-center">
+                <i class="fas fa-steak text-5xl text-gray-600 mb-4"></i> <!-- Icono de bistec -->
+                <h3 class="text-2xl font-semibold text-gray-900 mb-2">Vacío Novillo-Novillito</h3>
+                <p class="text-gray-600 text-center mb-4">Jugoso y lleno de sabor.</p>
+                <span class="price-tag">$10.500</span>
+            </div>
+
+            <!-- Product Card 6: Falda Novillo-Novillito -->
+            <div class="product-card p-6 flex flex-col items-center">
+                <i class="fas fa-ribs text-5xl text-gray-600 mb-4"></i> <!-- Icono de costillas -->
+                <h3 class="text-2xl font-semibold text-gray-900 mb-2">Falda Novillo-Novillito</h3>
+                <p class="text-gray-600 text-center mb-4">Excelente para guisos o a la parrilla.</p>
+                <span class="price-tag">$6.000</span>
+            </div>
+
+            <!-- Product Card 7: Pollo -->
+            <div class="product-card p-6 flex flex-col items-center">
+                <i class="fas fa-chicken text-5xl text-gray-600 mb-4"></i> <!-- Icono de pollo -->
+                <h3 class="text-2xl font-semibold text-gray-900 mb-2">Pollo</h3>
+                <p class="text-600 text-center mb-4">Precio por cajón. Fresco y delicioso.</p>
+                <span class="price-tag">Consultar Precio</span>
+            </div>
+
+            <!-- Product Card 8: Pata Muslo -->
+            <div class="product-card p-6 flex flex-col items-center">
+                <i class="fas fa-drumstick text-5xl text-gray-600 mb-4"></i> <!-- Icono de muslo -->
+                <h3 class="text-2xl font-semibold text-gray-900 mb-2">Pata Muslo</h3>
+                <p class="text-gray-600 text-center mb-4">Por cajón o mínimo 10kg.</p>
+                <span class="price-tag">Consultar Precio</span>
+            </div>
+
+            <!-- Product Card 9: Pechuga -->
+            <div class="product-card p-6 flex flex-col items-center">
+                <i class="fas fa-feather-alt text-5xl text-gray-600 mb-4"></i> <!-- Icono de pluma -->
+                <h3 class="text-2xl font-semibold text-gray-900 mb-2">Pechuga</h3>
+                <p class="text-gray-600 text-center mb-4">Compra mínima 10Kg.</p>
+                <span class="price-tag">Consultar Precio</span>
+            </div>
+
+            <!-- Product Card 10: Alita -->
+            <div class="product-card p-6 flex flex-col items-center">
+                <i class="fas fa-feather text-5xl text-gray-600 mb-4"></i> <!-- Icono de pluma simple -->
+                <h3 class="text-2xl font-semibold text-gray-900 mb-2">Alita</h3>
+                <p class="text-gray-600 text-center mb-4">Kg mínimo.</p>
+                <span class="price-tag">Consultar Precio</span>
+            </div>
+
+            <!-- Product Card 11: Papas Fritas congeladas -->
+            <div class="product-card p-6 flex flex-col items-center">
+                <i class="fas fa-potato text-5xl text-gray-600 mb-4"></i> <!-- Icono de patata (Font Awesome 6) -->
+                <h3 class="text-2xl font-semibold text-gray-900 mb-2">Papas Fritas congeladas</h3>
+                <p class="text-gray-600 text-center mb-4">Bolsa de 5kg. El complemento perfecto.</p>
+                <span class="price-tag">Consultar Precio</span>
+            </div>
+
+            <!-- Product Card 12: Peceto -->
+            <div class="product-card p-6 flex flex-col items-center">
+                <i class="fas fa-carrot text-5xl text-gray-600 mb-4"></i> <!-- Icono de zanahoria como placeholder general -->
+                <h3 class="text-2xl font-semibold text-gray-900 mb-2">Peceto</h3>
+                <p class="text-gray-600 text-center mb-4">Un corte premium para ocasiones especiales.</p>
+                <span class="price-tag">Consultar Precio</span>
+            </div>
+
+            <!-- Product Card 13: Chorizo Especial -->
+            <div class="product-card p-6 flex flex-col items-center">
+                <i class="fas fa-sausage text-5xl text-gray-600 mb-4"></i> <!-- Icono de salchicha -->
+                <h3 class="text-2xl font-semibold text-gray-900 mb-2">Chorizo Especial</h3>
+                <p class="text-gray-600 text-center mb-4">Gancho de 5kg Aprox. El toque de sabor.</p>
+                <span class="price-tag">Consultar Precio</span>
+            </div>
+
+            <!-- Product Card 14: Chorizo Común -->
+            <div class="product-card p-6 flex flex-col items-center">
+                <i class="fas fa-hotdog text-5xl text-gray-600 mb-4"></i> <!-- Icono de hotdog -->
+                <h3 class="text-2xl font-semibold text-gray-900 mb-2">Chorizo común</h3>
+                <p class="text-gray-600 text-center mb-4">Gancho 5kg Aprox. Clásico e infaltable.</p>
+                <span class="price-tag">Consultar Precio</span>
+            </div>
+
+            <!-- Product Card 15: Bondiola -->
+            <div class="product-card p-6 flex flex-col items-center">
+                <i class="fas fa-piggy-bank text-5xl text-gray-600 mb-4"></i> <!-- Icono de cerdito como placeholder general -->
+                <h3 class="text-2xl font-semibold text-gray-900 mb-2">Bondiola x unidad</h3>
+                <p class="text-gray-600 text-center mb-4">Ideal para la parrilla o al horno.</p>
+                <span class="price-tag">Consultar Precio</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section - Sección de contacto con información y enlaces -->
+    <section id="contacto" class="bg-red-700 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6">Contáctanos</h2> <!-- Título de la sección de contacto -->
+            <p class="text-lg mb-8">¿Tienes alguna consulta o quieres hacer un pedido? ¡Estamos para ayudarte!</p> <!-- Mensaje de contacto -->
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8">
+                <!-- Enlace telefónico -->
+                <a href="tel:+5493466632395" class="flex items-center space-x-3 text-white text-xl hover:underline">
+                    <i class="fas fa-phone-alt"></i> <!-- Icono de teléfono -->
+                    <span>+54 9 3466 63-2395</span>
+                </a>
+                <!-- Enlace de correo electrónico -->
+                <a href="mailto:info@distribuidoranahuelito.com" class="flex items-center space-x-3 text-white text-xl hover:underline">
+                    <i class="fas fa-envelope"></i> <!-- Icono de correo -->
+                    <span>info@distribuidoranahuelito.com</span>
+                </a>
+                <!-- Enlace de WhatsApp -->
+                <a href="https://wa.me/5493466632395" target="_blank" class="flex items-center space-x-3 text-white text-xl hover:underline">
+                    <i class="fab fa-whatsapp"></i> <!-- Icono de WhatsApp -->
+                    <span>Envíanos un WhatsApp</span>
+                </a>
+            </div>
+            <p class="mt-8 text-sm opacity-80">
+                Horarios de atención: Lunes a Sábado de 8:00 a 20:00 hs. <!-- Horarios de atención -->
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer Section - Pie de página con información de derechos de autor -->
+    <footer class="bg-gray-800 text-gray-300 py-6">
+        <div class="container mx-auto text-center text-sm">
+            <p>&copy; 2024 Distribuidora Mayorista Nahuelito. Todos los derechos reservados.</p> <!-- Texto de derechos de autor -->
+        </div>
+    </footer>
+
+</body>
+</html>
